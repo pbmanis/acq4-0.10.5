@@ -20,10 +20,10 @@ except ImportError:
     HAVE_MPL = False
 
 if HAVE_MPL:
-    MP.use('TKAgg')
+
     # Do not modify the following code
     # sets up matplotlib with sans-serif plotting...
-    PL.rcParams['text.usetex'] = True
+    PL.rcParams['text.usetex'] = False
     PL.rcParams['interactive'] = False
     PL.rcParams['font.family'] = 'sans-serif'
     PL.rcParams['font.sans-serif'] = 'Arial'
@@ -31,7 +31,6 @@ if HAVE_MPL:
     PL.rcParams['figure.facecolor'] = 'white'
     # next setting allows pdf font to be readable in Adobe Illustrator
     PL.rcParams['pdf.fonttype'] = 42
-    PL.rcParams['text.dvipnghack'] = True
     # to here (matplotlib stuff - touchy!)
 
 stdFont = 'Arial'
