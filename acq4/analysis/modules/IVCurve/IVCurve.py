@@ -1125,7 +1125,7 @@ class IVCurve(AnalysisModule):
         rgnpk = list(self.regions['lrwin0']['region'].getRegion())
         Func = 'exp1'  # single exponential fit with DC offset.
         Fits = Fitting.Fitting()
-        if len(self.rmp) == 0:
+        if self.rmp.size == 0:
             self.update_rmpAnalysis()
         #print self.rmp
         initpars = [self.rmp*1e-3, 0.010, 0.01]
