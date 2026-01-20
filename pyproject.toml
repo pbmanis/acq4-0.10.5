@@ -45,7 +45,8 @@ dependencies = [
     "coorx",
     "teleprox",
     "neuroanalysis",
-    "pyqtgraph @ git+https://github.com/acq4/pyqtgraph.git@acq4_working",
+   # "pyqtgraph @ git+https://github.com/acq4/pyqtgraph.git@acq4_working",
+    "pyqtgraph @ git+https://github.com/pbmanis/pyqtgraph.git@acq4_working_mplexporterfix",
     "rtprofile",
 ]
 
