@@ -21,8 +21,10 @@ except ImportError:
 
 if HAVE_MPL:
 
+
     # Do not modify the following code
     # sets up matplotlib with sans-serif plotting...
+    PL.rcParams['text.usetex'] = False
     PL.rcParams['text.usetex'] = False
     PL.rcParams['interactive'] = False
     PL.rcParams['font.family'] = 'sans-serif'
@@ -72,7 +74,7 @@ def matplotlibExport(gridlayout=None, title=None):
         raise Exception("Method matplotlibExport requires a QGridLayout")
 
     fig = PL.figure()
-    PL.rcParams['text.usetex'] = False
+
     # escape filename information so it can be rendered by removing
     # common characters that trip up latex...:
     escs = re.compile('[\\\/_]')
