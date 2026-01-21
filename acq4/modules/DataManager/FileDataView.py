@@ -7,9 +7,9 @@ from acq4.util.DataManager import FileHandle
 from acq4.util.DictView import DictView
 
 # from pg.graphicsItems import MultiPlotItem as MultiPlotItem
-from pg.Qt import QtCore
-from pg.widgets.GraphicsView import GraphicsView
-from pg.graphicsItems import GraphicsLayout
+from pyqtgraph.Qt import QtCore
+from pyqtgraph.widgets import GraphicsView
+from pypqgraph.graphicsItems import GraphicsLayout
 
 
 
