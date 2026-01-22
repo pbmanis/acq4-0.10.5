@@ -71,14 +71,13 @@ class MultiPlotItem(GraphicsLayout.GraphicsLayout):
         self.plots = None
         self.clear()
 
-# 
-__all__ = ['MultiPlotWidget']
+
 class MultiPlotWidget(GraphicsView):
     """Widget implementing a :class:`~pyqtgraph.GraphicsView` with a single
     :class:`~pyqtgraph.MultiPlotItem` inside."""
     def __init__(self, parent=None):
         self.minPlotHeight = 50
-        self.mPlotItem = MultiPlotItem.MultiPlotItem()
+        self.mPlotItem = MultiPlotItem()
         GraphicsView.__init__(self, parent)
         self.enableMouse(False)
         self.setCentralItem(self.mPlotItem)
@@ -197,7 +196,7 @@ class FileDataView(Qt.QSplitter):
 
     def displayDataAsPlot(self, data):
         self.clear()
-        w = pg.MultiPlotWidget(self)
+        w = MultiPlotWidget(self)
         w.setObjectName("DataManager_multiPlotWidget")
         self.addWidget(w)
         w.plot(data)
