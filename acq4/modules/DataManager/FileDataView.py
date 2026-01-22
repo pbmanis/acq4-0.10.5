@@ -9,7 +9,7 @@ from acq4.util.DictView import DictView
 # from pg.graphicsItems import MultiPlotItem as MultiPlotItem
 from pyqtgraph.Qt import QtCore
 from pyqtgraph.widgets import GraphicsView
-from pypqgraph.graphicsItems import GraphicsLayout
+from pyqtgraph.graphicsItems import GraphicsLayout
 
 
 
