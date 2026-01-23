@@ -5,10 +5,7 @@ from acq4.filetypes.MultiPatchLog import MultiPatchLogWidget
 from acq4.util import Qt
 from acq4.util.DataManager import FileHandle
 from acq4.util.DictView import DictView
-
-from pyqtgraph.Qt import QtCore
-from pyqtgraph.widgets import GraphicsView, MultiPlotWidget
-from pyqtgraph.graphicsItems import GraphicsLayout, MultiPlotItems
+from MetaArray.plotting import MetaArrayPlotWidget, MetaArrayPlotItem
 
 
 class FileDataView(Qt.QSplitter):
@@ -64,13 +61,15 @@ class FileDataView(Qt.QSplitter):
 
     def displayDataAsPlot(self, data):
         self.clear()
-        GraphicsView.__init__(self)
-
-        w = MultiPlotWidget(self)
-        w.setObjectName("DataManager_multiPlotWidget")
-        self.addWidget(w)
-        w.plot(data)
-        self._widgets.append(w)
+        widget = MetaArrayPlotWidget(parent=self)
+        widget.plot(data)
+        widget.show()
+        pi = widget.mPlotItem
+        # for i, item in enumerate(pi.items):
+        #     if i > 0:
+        #         print(dir(pi.getItem(i,0)))
+        #         item.setXLink(pi.getItem(i, 0))
+        self._widgets.append(widget)
 
     def displayDataAsImage(self, data):
         if self._imageWidget is None:
